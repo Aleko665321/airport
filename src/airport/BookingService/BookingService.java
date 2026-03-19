@@ -1,4 +1,4 @@
-package airport.service;
+package airport.BookingService;
 
 import airport.model.Passenger;
 import airport.model.Ticket;

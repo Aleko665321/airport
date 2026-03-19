@@ -1,6 +1,8 @@
+package airport.model;
+
 public class Passenger {
-   private String name;
-   private String passportNumber;
+    private String name;
+    private String passportNumber;
 
     public String getName() {
         return name;
@@ -18,8 +20,8 @@ public class Passenger {
         this.passportNumber = passportNumber;
     }
 
-    public Passenger(String name, String passportNumber) {
-       this.name = name;
-       this.passportNumber = passportNumber;
-   }
+    public Passenger(String name, Ticket passportNumber) {
+        this.name = name;
+        this.passportNumber = passportNumber;
+    }
 }
