@@ -1,10 +1,10 @@
 package airport.model;
 
-public class crewmember {
+public class CrewMember {
 
     private String name;
 
-    public crewmember(String name) {
+    public CrewMember(String name) {
         this.name = name;
     }
 

@@ -1,40 +1,40 @@
-package airport.Main;
+package airport.main;
 
 import airport.model.*;
-import airport.BookingService.BookingService;
+import airport.service.BookingService;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class app {
+public class App {
 
     public static void main(String[] args) {
 
-        ticket ticket = new ticket("12A", new BigDecimal("199.99"));
-        passenger passenger = new passenger("Aleko", ticket);
+        Ticket ticket = new Ticket("12A", new BigDecimal("199.99"));
+        Passenger passenger = new Passenger("Aleko", ticket);
 
-        pilot pilot = new pilot("John", 10);
-        flightattendant attendant = new flightattendant("Anna", "English");
+        Pilot pilot = new Pilot("John", 10);
+        FlightAttendant attendant = new FlightAttendant("Anna", "English");
 
-        crewmember[] crew = {pilot, attendant};
-        passenger[] passengers = {passenger};
+        CrewMember[] crew = {pilot, attendant};
+        Passenger[] passengers = {passenger};
 
-        flight flight = new flight(
+        Flight flight = new Flight(
                 "Paris",
                 LocalDateTime.now().plusDays(1),
                 passengers,
                 crew
         );
 
-        gate gate = new gate("G1", flight);
-        gate[] gates = {gate};
+        Gate gate = new Gate("G1", flight);
+        Gate[] gates = {gate};
 
-        terminal terminal = new terminal("T1", gates);
-        terminal[] terminals = {terminal};
+        Terminal terminal = new Terminal("T1", gates);
+        Terminal[] terminals = {terminal};
 
-        airline airline = new airline("Air Georgia");
+        Airline airline = new Airline("Air Georgia");
 
-        airport airport = new airport("Tbilisi Airport", terminals, airline);
+        Airport airport = new Airport("Tbilisi Airport", terminals, airline);
 
         BookingService.bookSeat(passenger, ticket);
 

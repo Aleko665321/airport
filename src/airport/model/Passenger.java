@@ -1,11 +1,11 @@
 package airport.model;
 
-public class passenger {
+public class Passenger {
 
     private String name;
-    private ticket ticket;
+    private Ticket ticket;
 
-    public passenger(String name, ticket ticket) {
+    public Passenger(String name, Ticket ticket) {
         this.name = name;
         this.ticket = ticket;
     }
@@ -14,7 +14,7 @@ public class passenger {
         return name;
     }
 
-    public ticket getTicket() {
+    public Ticket getTicket() {
         return ticket;
     }
 
@@ -22,7 +22,7 @@ public class passenger {
         this.name = name;
     }
 
-    public void setTicket(ticket ticket) {
+    public void setTicket(Ticket ticket) {
         this.ticket = ticket;
     }
 }

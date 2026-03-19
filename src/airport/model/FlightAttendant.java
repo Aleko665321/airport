@@ -1,10 +1,10 @@
 package airport.model;
 
-public class flightattendant extends crewmember {
+public class FlightAttendant extends CrewMember {
 
     private String language;
 
-    public flightattendant(String name, String language) {
+    public FlightAttendant(String name, String language) {
         super(name);
         this.language = language;
     }

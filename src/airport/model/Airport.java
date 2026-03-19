@@ -1,12 +1,12 @@
 package airport.model;
 
-public class airport {
+public class Airport {
 
     private String name;
-    private terminal[] terminals;
-    private airline airline;
+    private Terminal[] terminals;
+    private Airline airline;
 
-    public airport(String name, terminal[] terminals, airline airline) {
+    public Airport(String name, Terminal[] terminals, Airline airline) {
         this.name = name;
         this.terminals = terminals;
         this.airline = airline;
@@ -17,11 +17,11 @@ public class airport {
     }
 
 
-    public terminal[] getTerminals() {
+    public Terminal[] getTerminals() {
         return terminals;
     }
 
-    public airline getAirline() {
+    public Airline getAirline() {
         return airline;
     }
 
@@ -29,11 +29,11 @@ public class airport {
         this.name = name;
     }
 
-    public void setTerminals(terminal[] terminals) {
+    public void setTerminals(Terminal[] terminals) {
         this.terminals = terminals;
     }
 
-    public void setAirline(airline airline) {
+    public void setAirline(Airline airline) {
         this.airline = airline;
     }
 }

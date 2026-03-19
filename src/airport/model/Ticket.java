@@ -2,12 +2,12 @@ package airport.model;
 
 import java.math.BigDecimal;
 
-public class ticket {
+public class Ticket {
 
     private String seatNumber;
     private BigDecimal price;
 
-    public ticket(String seatNumber, BigDecimal price) {
+    public Ticket(String seatNumber, BigDecimal price) {
         this.seatNumber = seatNumber;
         this.price = price;
     }

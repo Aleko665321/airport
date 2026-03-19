@@ -1,10 +1,10 @@
 package airport.model;
 
-public class airline {
+public class Airline {
 
     private String name;
 
-    public airline(String name) {
+    public Airline(String name) {
         this.name = name;
     }
 
