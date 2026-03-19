@@ -2,14 +2,14 @@ package airport.model;
 
 import java.time.LocalDateTime;
 
-public class Flight {
+public class flight {
 
     private String destination;
     private LocalDateTime departureTime;
-    private Passenger[] passengers;
-    private CrewMember[] crew;
+    private passenger[] passengers;
+    private crewmember[] crew;
 
-    public Flight(String destination, LocalDateTime departureTime, Passenger[] passengers, CrewMember[] crew) {
+    public flight(String destination, LocalDateTime departureTime, passenger[] passengers, crewmember[] crew) {
         this.destination = destination;
         this.departureTime = departureTime;
         this.passengers = passengers;
@@ -24,11 +24,11 @@ public class Flight {
         return departureTime;
     }
 
-    public Passenger[] getPassengers() {
+    public passenger[] getPassengers() {
         return passengers;
     }
 
-    public CrewMember[] getCrew() {
+    public crewmember[] getCrew() {
         return crew;
     }
 
@@ -40,11 +40,11 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
-    public void setPassengers(Passenger[] passengers) {
+    public void setPassengers(passenger[] passengers) {
         this.passengers = passengers;
     }
 
-    public void setCrew(CrewMember[] crew) {
+    public void setCrew(crewmember[] crew) {
         this.crew = crew;
     }
 }

@@ -1,11 +1,11 @@
 package airport.model;
 
-public class Gate {
+public class gate {
 
     private String gateNumber;
-    private Flight flight;
+    private flight flight;
 
-    public Gate(String gateNumber, Flight flight) {
+    public gate(String gateNumber, flight flight) {
         this.gateNumber = gateNumber;
         this.flight = flight;
     }
@@ -14,7 +14,7 @@ public class Gate {
         return gateNumber;
     }
 
-    public Flight getFlight() {
+    public flight getFlight() {
         return flight;
     }
 
@@ -22,7 +22,7 @@ public class Gate {
         this.gateNumber = gateNumber;
     }
 
-    public void setFlight(Flight flight) {
+    public void setFlight(flight flight) {
         this.flight = flight;
     }
 }

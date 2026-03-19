@@ -1,10 +1,10 @@
 package airport.model;
 
-public class Pilot extends CrewMember {
+public class pilot extends crewmember {
 
     private int experienceYears;
 
-    public Pilot(String name, int experienceYears) {
+    public pilot(String name, int experienceYears) {
         super(name);
         this.experienceYears = experienceYears;
     }

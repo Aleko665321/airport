@@ -1,7 +1,7 @@
 package airport.BookingService;
 
-import airport.model.Passenger;
-import airport.model.Ticket;
+import airport.model.passenger;
+import airport.model.ticket;
 
 public class BookingService {
 
@@ -12,7 +12,7 @@ public class BookingService {
         System.out.println("BookingService initialized");
     }
 
-    public static void bookSeat(Passenger passenger, Ticket ticket) {
+    public static void bookSeat(passenger passenger, ticket ticket) {
         bookingCount++;
 
         System.out.println("Booking for: " + passenger.getName());

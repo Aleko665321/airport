@@ -6,7 +6,7 @@ import airport.BookingService.BookingService;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public class main {
+public class app {
 
     public static void main(String[] args) {
 
@@ -39,5 +39,6 @@ public class main {
         BookingService.bookSeat(passenger, ticket);
 
         System.out.println("Total bookings: " + BookingService.getBookingCount());
+        System.out.println("Airport name: " + airport.getName());
     }
 }

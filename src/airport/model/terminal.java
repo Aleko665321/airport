@@ -1,11 +1,11 @@
 package airport.model;
 
-public class Terminal {
+public class terminal {
 
     private String name;
-    private Gate[] gates;
+    private gate[] gates;
 
-    public Terminal(String name, Gate[] gates) {
+    public terminal(String name, gate[] gates) {
         this.name = name;
         this.gates = gates;
     }
@@ -14,7 +14,7 @@ public class Terminal {
         return name;
     }
 
-    public Gate[] getGates() {
+    public gate[] getGates() {
         return gates;
     }
 
@@ -22,7 +22,7 @@ public class Terminal {
         this.name = name;
     }
 
-    public void setGates(Gate[] gates) {
+    public void setGates(gate[] gates) {
         this.gates = gates;
     }
 }
