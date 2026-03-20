@@ -1,6 +1,7 @@
 package airport.service;
 
 import airport.model.Passenger;
+import airport.model.Person;
 import airport.model.Ticket;
 
 public class BookingService {
@@ -23,5 +24,10 @@ public class BookingService {
 
     public static int getBookingCount() {
         return bookingCount;
+    }
+
+    public static void printPersonRole(Person person) {
+        System.out.println("Name: " + person.getName());
+        System.out.println("Role: " + person.getRole());
     }
 }

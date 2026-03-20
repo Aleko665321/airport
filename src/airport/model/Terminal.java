@@ -1,12 +1,12 @@
 package airport.model;
 
-public class Terminal {
+public class Terminal extends Building {
 
     private String name;
     private Gate[] gates;
 
     public Terminal(String name, Gate[] gates) {
-        this.name = name;
+        super(name);
         this.gates = gates;
     }
 

@@ -5,7 +5,7 @@ public class FlightAttendant extends CrewMember {
     private String language;
 
     public FlightAttendant(String name, String language) {
-        super(name);
+        super(name, "FlightAttendant");
         this.language = language;
     }
 

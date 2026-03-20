@@ -5,7 +5,7 @@ public class Pilot extends CrewMember {
     private int experienceYears;
 
     public Pilot(String name, int experienceYears) {
-        super(name);
+        super(name, "Pilot");
         this.experienceYears = experienceYears;
     }
 

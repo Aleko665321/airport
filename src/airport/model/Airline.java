@@ -1,11 +1,11 @@
 package airport.model;
 
-public class Airline {
+public class Airline extends Company {
 
     private String name;
 
     public Airline(String name) {
-        this.name = name;
+        super(name);
     }
 
     public String getName() {

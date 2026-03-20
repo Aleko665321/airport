@@ -27,4 +27,23 @@ public class Ticket {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{seat='" + seatNumber + "', price=" + price + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ticket)) return false;
+
+        Ticket that = (Ticket) o;
+        return seatNumber.equals(that.seatNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return seatNumber.hashCode();
+    }
 }
