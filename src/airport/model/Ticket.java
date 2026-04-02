@@ -1,6 +1,8 @@
 package airport.model;
 
 import java.math.BigDecimal;
+import airport.exceptions.InvalidTicketPriceException;
+
 
 public class Ticket {
 
@@ -10,6 +12,9 @@ public class Ticket {
     public Ticket(String seatNumber, BigDecimal price) {
         this.seatNumber = seatNumber;
         this.price = price;
+         if (price.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new InvalidTicketPriceException("Price must be positive");
+        }
     }
 
     public String getSeatNumber() {

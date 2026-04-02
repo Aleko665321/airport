@@ -2,20 +2,21 @@ package airport.model;
 
 import airport.model.Interfaces.Bookable;
 import airport.model.Interfaces.Loadable;
+import airport.exceptions.InvalidFlightException;
+import airport.annotation.Loggable;
 
-import java.awt.print.Book;
 import java.time.LocalDateTime;
 
 public class Flight extends Transport implements Bookable, Loadable {
 
+    private int id;
     private LocalDateTime departureTime;
     private Passenger[] passengers;
     private CrewMember[] crew;
 
-
     public static int totalFlights;
 
-    static { // static block
+    static {
         totalFlights = 0;
         System.out.println("Flight class loaded, totalFlights initialized!");
     }
@@ -24,12 +25,27 @@ public class Flight extends Transport implements Bookable, Loadable {
         System.out.println("A new Flight object is being created!");
     }
 
-    public Flight(String destination, LocalDateTime departureTime, Passenger[] passengers, CrewMember[] crew) {
+    public Flight(int id, String destination, LocalDateTime departureTime,
+                  Passenger[] passengers, CrewMember[] crew) throws InvalidFlightException {
         super(destination);
+
+        if (destination == null || destination.isEmpty()) {
+            throw new InvalidFlightException("Destination cannot be empty");
+        }
+
+        if (departureTime == null) {
+            throw new InvalidFlightException("Departure time cannot be null");
+        }
+
+        this.id = id;
         this.departureTime = departureTime;
         this.passengers = passengers;
         this.crew = crew;
         totalFlights++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public LocalDateTime getDepartureTime() {
@@ -56,18 +72,18 @@ public class Flight extends Transport implements Bookable, Loadable {
         this.crew = crew;
     }
 
-    public static void printTotalFlights() { // static method
+    public static void printTotalFlights() {
         System.out.println("Total flights created: " + totalFlights);
     }
 
-    public void printFlightInfo() { // regular (instance) method
+    @Loggable
+    public void printFlightInfo() {
         System.out.println("Flight to " + destination + " with " + passengers.length + " passengers.");
     }
 
-
     @Override
     public String toString() {
-        return "Flight{destination='" + destination + "', departureTime=" + departureTime + "}";
+        return "Flight{id=" + id + ", destination='" + destination + "', departureTime=" + departureTime + "}";
     }
 
     @Override
@@ -76,22 +92,23 @@ public class Flight extends Transport implements Bookable, Loadable {
         if (!(o instanceof Flight)) return false;
 
         Flight that = (Flight) o;
-        return destination.equals(that.destination);
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return destination.hashCode();
+        return Integer.hashCode(id);
     }
 
-
     @Override
-    public void book(){
-        System.out.println("Flight to" + destination + "booked!");
+    public void book() {
+        System.out.println("Flight to " + destination + " booked!");
     }
 
     @Override
     public void load() {
         System.out.println("Loading passengers and crew onto flight to " + destination);
     }
+
+
 }
