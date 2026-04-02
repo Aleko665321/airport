@@ -1,6 +1,8 @@
 package airport.model;
 
-public class Pilot extends CrewMember {
+import airport.model.Interfaces.Flyable;
+
+public class Pilot extends CrewMember implements Flyable {
 
     private int experienceYears;
 
@@ -15,5 +17,10 @@ public class Pilot extends CrewMember {
 
     public void setExperienceYears(int experienceYears) {
         this.experienceYears = experienceYears;
+    }
+
+    @Override
+    public void fly() {
+        System.out.println(getName() + " is flying the plane!");
     }
 }

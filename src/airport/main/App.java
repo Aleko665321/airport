@@ -1,6 +1,8 @@
 package airport.main;
 
 import airport.model.*;
+import airport.model.Interfaces.Bookable;
+import airport.model.Interfaces.Flyable;
 import airport.service.BookingService;
 
 import java.math.BigDecimal;
@@ -26,13 +28,22 @@ public class App {
                 crew
         );
 
+        Flyable f = pilot;
+        f.fly();
+
+        Bookable b = flight;
+        b.book();
+
         Gate gate = new Gate("G1", flight);
         Gate[] gates = {gate};
 
         Terminal terminal = new Terminal("T1", gates);
         Terminal[] terminals = {terminal};
 
-        Airline airline = new Airline("Air Georgia");
+        Airline airline = new Airline("Air Georgia",  new Terminal[]{terminal},
+                new BigDecimal("50000000"),
+                20,
+                "Georgia" );
 
         Airport airport = new Airport("Tbilisi Airport", terminals, airline);
 
